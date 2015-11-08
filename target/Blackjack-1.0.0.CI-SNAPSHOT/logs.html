@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/global/main.xhtml">
+	<ui:define name="page-subtitle">
+		Blackjack
+	</ui:define>
+	<ui:define name="page-content">
+		<h:form id="main">
+			<p:growl id="messages" />
+			<h1>Blackjack</h1>
+			
+			<p:panelGrid columns="2" styleClass="columns, noBorders">
+				<p:dataTable var="log" value="#{clientApplication.logList}">
+					<p:column headerText="Id">
+						<h:outputText value="#{log.id}" />
+					</p:column>
+
+					<p:column headerText="Player hand">
+						<h:outputText value="#{log.playerHand}" />
+					</p:column>
+
+					<p:column headerText="Dealer hand">
+						<h:outputText value="#{log.dealerHand}" />
+					</p:column>
+
+					<p:column headerText="Result">
+						<h:outputText value="#{log.result}" />
+					</p:column>
+
+					<p:column headerText="Date">
+						<h:outputText value="#{log.gameDate}" />
+					</p:column>
+				</p:dataTable>
+			</p:panelGrid>
+			<p:commandButton value="Back"
+				action="game.xhtml?faces-redirect=true" />
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>
