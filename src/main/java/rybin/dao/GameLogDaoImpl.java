@@ -23,8 +23,7 @@ public class GameLogDaoImpl implements GameLogDao {
 			em.merge(gameLog);
 		}
 	}
-
-    
+ 
 	public GameLog findById(int id) {
 		GameLog gl = null;
 		gl = em.find(GameLog.class, id);

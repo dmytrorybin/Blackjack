@@ -156,11 +156,11 @@ public class ClientApplication {
 	public String gameResult() {
 		String string = Client.create().resource("http://localhost:8080/Blackjack/webapi/game/gameresult").accept(MediaType.TEXT_PLAIN)
 				.get(new GenericType<String>(){});
-		System.out.println(string);
+//		System.out.println("" + string);
 			
 		getPlayerCards();
 		getDealerCards();
-System.out.println(string);
+//System.out.println(string);
 		if (string.equals("Player bust") || 
 				string.equals("Dealer wins") ||
 				string.equals("Player wins") || 
@@ -169,30 +169,30 @@ System.out.println(string);
 				string.equals("Draw")) {
 			
 			if (string.equals("Blackjack!")) {					
-				System.out.println("BJ");
+				System.out.println("(client side) Blackjack");
 				updateMoney(bet * 25 / 10);
 				updateLog("Blackjack!");
 				return message = "Blackjack!";
 			}
 			if (string.equals("Player wins") || string.equals("Dealer bust")) {	
-				System.out.println("PW");
+				System.out.println("(client side) player wins");
 				updateMoney(bet * 2);
 				updateLog("Player wins");
 				return message = "Player wins";
 			}
 			else if (string.equals("Player bust") || string.equals("Dealer wins")) {
-				System.out.println("DW");
+				System.out.println("(client side) dealer wins");
 				updateLog("Dealer wins");
 				return message = "Dealer wins";
 			}
 			else if (string.equals("Draw")) {
-				System.out.println("D");
+				System.out.println("(client side) draw");
 				updateMoney(bet);
 				updateLog("Draw");
 				return message = "Draw";
 			}
 		}
-		System.out.println("no");
+		System.out.println("(client side) no result");
 		return "/ "; 
 	}
 
@@ -328,10 +328,6 @@ System.out.println(string);
 	public void setPlayerHand(ArrayList<String> playerHand) {
 		this.playerHand = playerHand;
 	}
-
-
-
-
 
 	public ArrayList<String> getDealerHand() {
 		return dealerHand;

@@ -211,7 +211,7 @@ public class GameLogic {
 				aceCount--;
 			}			
 		}
-		System.out.println("Player hand " + sum);
+		System.out.println("Player hand: " + sum);
 		return sum;
 	}
 
@@ -239,7 +239,7 @@ public class GameLogic {
 				aceCount--;
 			}			
 		}
-		System.out.println("Dealer hand " + sum);
+		System.out.println("Dealer hand: " + sum);
 		return sum;
 	}
 	
@@ -293,15 +293,15 @@ public class GameLogic {
 	public String resultFinal() {
 		
 		if (playerHandSum() > dealerHandSum() & playerHandSum() <= 21 | dealerHandSum() > 21) {
-			System.out.println("1");
+			System.out.println("(server side) final result - player wins");
 			return result = "Player wins";
 		}
 		else if (playerHandSum() < dealerHandSum() & dealerHandSum() <= 21 | playerHandSum() > 21) {
-			System.out.println("2");
+			System.out.println("(server side) final result - dealer wins");
 			return result = "Dealer wins";
 		}
 		else if (playerHandSum() == dealerHandSum())  {
-			System.out.println("3");
+			System.out.println("(server side) final result - draw");
 			return result = "Draw";
 		}
 		
@@ -312,7 +312,7 @@ public class GameLogic {
 	@Path("/gameresult")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String gameResult() {	
-		System.out.println("---" + result + "---");
+		System.out.println("(server side) result before method :gameResult:" + result);
 		if (result.equals("Player bust") || 
 				result.equals("Dealer wins") ||
 				result.equals("Player wins") || 
