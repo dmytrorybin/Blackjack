@@ -1,8 +1,13 @@
 ----------------------------------------------------------------
-Tue Nov 03 21:57:13 EET 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0150-ceec-b391-0000042816b0 
-on database directory C:\Users\ִלטענטי\workspace\GamblingDB_2 with class loader sun.misc.Launcher$AppClassLoader@14dad5dc 
-Loaded from file:/C:/Users/%d0%94%d0%bc%d0%b8%d1%82%d1%80%d0%b8%d0%b9/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
+Thu Nov 19 23:51:01 EET 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0151-21ba-668a-00000bbd9530 
+on database directory C:\Users\ִלטענטי\workspace\Test with class loader WebappClassLoader
+  context: Blackjack
+  delegate: false
+----------> Parent Classloader:
+java.net.URLClassLoader@2626b418
+ 
+Loaded from file:/C:/Users/ִלטענטי/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp2/wtpwebapps/Blackjack/WEB-INF/lib/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_45-b15
 user.dir=C:\Users\ִלטענטי\workspace\Blackjack
