@@ -317,6 +317,7 @@ public class ClientApplication {
 		result = " ";
 		message = " ";
 		show = false;
+		bet = 0;
 //		getDeal();
 		return " ";  
 	}

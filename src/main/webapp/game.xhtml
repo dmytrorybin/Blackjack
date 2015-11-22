@@ -15,24 +15,27 @@
 			<p:growl id="messages" />
 			<h1>Blackjack</h1>
 			<p:panelGrid columns="4" styleClass="columns, noBorders">
-				<h:outputText value="#{clientApplication.getPlayerMoney()} $" style="font-size: 250%" />
-				<h:outputText value="Make your bet: " rendered="#{clientApplication.playerHand.isEmpty() == 'true'}" />
-				<h:selectOneMenu value="#{clientApplication.bet}" rendered="#{clientApplication.playerHand.isEmpty() == 'true'}">
+				<h:outputText value="#{clientApplication.getPlayerMoney()} $"
+					style="font-size: 250%" />
+				<h:outputText value="Make your bet: "
+					rendered="#{clientApplication.playerHand.isEmpty() == 'true'}" />
+				<h:selectOneMenu value="#{clientApplication.bet}"
+					rendered="#{clientApplication.playerHand.isEmpty() == 'true'}">
 					<f:selectItem itemValue="10" itemLabel="10" />
 					<f:selectItem itemValue="20" itemLabel="20" />
 					<f:selectItem itemValue="30" itemLabel="30" />
-					<f:selectItem itemValue="40" itemLabel="50" />
-					<f:selectItem itemValue="50" itemLabel="100" />
+					<f:selectItem itemValue="40" itemLabel="40" />
+					<f:selectItem itemValue="50" itemLabel="50" />
 				</h:selectOneMenu>
-				
-				<p:commandButton value="Make bet" 
-					action="#{clientApplication.makeBet()}" 
-					rendered="#{clientApplication.playerHand.isEmpty() == 'true'}"/>		
+
+				<p:commandButton value="Make bet"
+					action="#{clientApplication.makeBet()}"
+					rendered="#{clientApplication.playerHand.isEmpty() == 'true'}" />
 				<p:commandButton value="Deal"
 					action="#{clientApplication.getDeal()}" update="main"
 					disabled="#{clientApplication.playerHand.isEmpty() != 'true'}" />
-				<p:commandButton value="Hit" 
-					action="#{clientApplication.getHit()}" update="main"
+				<p:commandButton value="Hit" action="#{clientApplication.getHit()}"
+					update="main"
 					disabled="#{clientApplication.playerHand.isEmpty() == 'true'}" />
 				<p:commandButton value="Stand"
 					action="#{clientApplication.getStand()}" update="main"
@@ -40,11 +43,12 @@
 			</p:panelGrid>
 
 			<p:dataGrid var="card" value="#{clientApplication.dealerHand.get(1)}"
-				columns="150" layout="grid" rendered="#{clientApplication.playerHand.isEmpty() != 'true' and 
+				columns="150" layout="grid"
+				rendered="#{clientApplication.playerHand.isEmpty() != 'true' and 
 				clientApplication.show != 'true'}">
 				<f:facet name="header"> Dealer </f:facet>
 				<h:panelGrid columns="2" style="width: 10">
-				<p:graphicImage value="/resources/deck/back.gif"
+					<p:graphicImage value="/resources/deck/back.gif"
 						style="margin-left" width="71" height="96" />
 					<p:graphicImage value="/resources/deck/#{card}.gif"
 						style="margin-left" width="71" height="96" />
@@ -52,7 +56,8 @@
 			</p:dataGrid>
 
 			<p:dataGrid var="card" value="#{clientApplication.dealerHand}"
-				columns="150" layout="grid" rendered="#{clientApplication.playerHand.isEmpty() != 'true' and 
+				columns="150" layout="grid"
+				rendered="#{clientApplication.playerHand.isEmpty() != 'true' and 
 				clientApplication.show == 'true'}">
 				<f:facet name="header"> Dealer </f:facet>
 				<h:panelGrid columns="1" style="width: 10">
@@ -60,12 +65,13 @@
 						style="margin-left" width="71" height="96" />
 				</h:panelGrid>
 			</p:dataGrid>
-			
-		 	<p:outputLabel value="#{clientApplication.getResultM()}"
-				style="font-size: 250%" />  
-				
+
+			<p:outputLabel value="#{clientApplication.getResultM()}"
+				style="font-size: 250%" />
+
 			<p:dataGrid var="card" value="#{clientApplication.playerHand}"
-				style="width: 10%" columns="150" layout="grid" rendered="#{clientApplication.playerHand.isEmpty() != 'true'}">		
+				style="width: 10%" columns="150" layout="grid"
+				rendered="#{clientApplication.playerHand.isEmpty() != 'true'}">
 				<f:facet name="header"> Player </f:facet>
 				<h:panelGrid columns="1">
 					<p:graphicImage value="/resources/deck/#{card}.gif" width="71"
